@@ -12,6 +12,8 @@ body{
     background-color:#262626;
     color: white;
     height: 50px;
+    animation-name: navegacao;
+    animation-duration: 2s;
 }
 
 .navigation ul{
@@ -31,6 +33,24 @@ body{
     font-weight: 100;
 }
 
+.navigation a{
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover{
+    color: #97916c;
+}
+
+.navigation li.threeline-icon{
+    display: none;
+}
+
+.navigation li.threeline-icon:hover{
+    color: #97916c;
+    cursor: pointer;
+}
+
 .capa{
     color: white;
 }
@@ -48,6 +68,8 @@ body{
 .profile-pic{
     width: 40%;
     text-align: center;
+    animation-name: profile-capa;
+    animation-duration: 1s;
 }
 
 .profile-pic img{
@@ -59,6 +81,8 @@ body{
 .profile-title{
     vertical-align: top;
     width: 59%;
+    animation-name: profile-capa;
+    animation-duration: 1s;
 }
 
 .profile-title h1{
@@ -79,12 +103,13 @@ body{
 
 .main{
     padding: 40px 180px 80px 180px;
-
+    animation-name: conteudo;
+    animation-duration: 1s;
 }
 
 .cv-pic{
     float: left;
-    width: 200px;
+    width: 230px;
     margin-right: 30px;
     margin-bottom: 30px;
     border-radius: 30px;
@@ -119,15 +144,13 @@ body{
     text-align: justify;
 }
 
-.main a{
-    color: gray;
-    font-size: 16px;
-    font-weight: 100;
-}
-
 .caminho{
     list-style: none;
     padding-left: 0;
+    color: gray;
+}
+
+.caminho a{
     color: gray;
 }
 
@@ -159,10 +182,12 @@ body{
     background-color: black;
     opacity: 0;
     padding-top: 140px;
+    transition: 0.5s
 }
 
 .blackbox:hover{
     opacity: 0.8;
+    transition: 0.5s;
 }
 
 .blackbox-text{
@@ -178,4 +203,110 @@ body{
 
 .fotos-trabalhos{
     width: 100%;
+}
+
+.back-link{
+    color:#97916c;
+}
+
+@keyframes profile-capa{
+    0% {transform: translate(0px,30px); opacity: 0;}
+    100% {transform: translate(0px,0px); opacity: 1;}
+}
+
+@keyframes navegacao{
+    0% {transform: translate(-100px,0px);opacity: 0;}
+    50% {transform: translate(-100px,0px);opacity: 0;}
+    100% {transform: translate(0px,0px);opacity: 1;}
+}
+
+@keyframes conteudo{
+    0% {transform: translate(0px,30px); opacity: 0;}
+    100% {transform: translate(0px,0px); opacity: 1;}
+}
+
+@media (max-width: 1000px){
+    .navigation li{
+        display: none;
+    }
+
+    .navigation li.threeline-icon{
+        display: inline-block;
+    }
+
+    .capa div{
+        display: block;
+        height: auto;
+    }
+
+    .profile-pic{
+        width: 100%;
+    }
+
+    .profile-pic img{
+        margin-top: 0px;
+        max-width: 80%;
+    }
+
+    .profile-title{
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-title h1{
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .profile-title h2{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .main{
+        padding: 10px 5% 40px 5%;
+    }
+
+    .main p{
+        text-align: left;
+        line-height: 30px;
+    }
+    
+    .caminho li{
+        font-size: 14px;
+    }
+
+    .cv-pic{
+        float: none;
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    .miniatura{
+        max-width: 100%;
+        background-size: auto 100%;
+    }    
+
+    .blackbox{
+        opacity: 0.8;
+    }
+
+    .menujs{
+        height: auto;
+    }
+
+    .menujs ul{
+        height: auto;
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .menujs li{
+        display: block;
+        border-bottom: solid gray 1px;
+        padding: 0;
+        width: 100%;
+    }
 }
